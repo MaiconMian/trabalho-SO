@@ -1,0 +1,30 @@
+<!--
++-------------------------------------------------------------+
+| UNIFAL – Universidade Federal de Alfenas.                    |
+| BACHARELADO EM CIENCIA DA COMPUTACAO.                        |
+| Trabalho..: Algoritmo de Substituição de página              |
+| Disciplina: Sistemas Operacionais                            |
+| Professor.: Fellipe Rey                                      |
+| Aluno(s): Maicon Almeida Mian 2023.1.08.013                  |
++-------------------------------------------------------------+
+-->
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substituição de página</title>
+</head>
+<body> 
+
+    <p class="titulo"> Substituição de página </p>
+    <p class="texto" > Por: Maicon Almeida Mian (RA:2023.1.08.013) | Sistemas Operacionais [DCE131] | Professor: Fellipe Rey</p>
+    <input type="number" id="tamanhoProcesso" class="entry">
+    <input type="number" id="horaEntrar" class="entry">
+    <button onclick="criaProcesso()" id="botaoCriaProcesso" class="botaoSimples"> CRIAR </button>
+    <button onclick="processar()" id="botaoInicia" class="botaoSimples"> INICIAR </button>
+
+    <script src="scripts/MRU.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/Processo.js"></script>
+</body>
