@@ -48,7 +48,7 @@ class MRU {
         return menor;
     }
 
-    // realoca todos os processos em ordem de modo que não fique espaços entre os processos
+    
     desfragmentaMemoria(){
 
         for(let i = 0; i < this.memoria.length; i++){
@@ -142,8 +142,6 @@ class MRU {
         let numeroSorteado = Math.floor(Math.random() * processosMenorClasse.length);
         let processoAleatorio = processosMenorClasse[numeroSorteado];
     
-        console.log(`Processo sorteado para remoção:`, processoAleatorio);
-    
         // Removendo o processo
         for (let k = processoAleatorio.getEnderecoInicio(); this.memoria[k] == processoAleatorio.getId(); k++) {
             this.memoria[k] = -1;
@@ -203,12 +201,12 @@ class MRU {
     incrementaM(){
         for(let j = 0; j < this.tabelaProcessos.length; j++){
             
-            if(this.tabelaProcessos[j].getContador() == 9 && this.tabelaProcessos[j].getM() == 1){
+            if(this.tabelaProcessos[j].getContador() == 10){
                 this.tabelaProcessos[j].setM(0);
-                this.tabelaProcessos[j].setContador(0);
+                this.tabelaProcessos[j].setContador(1);
                 Saida = Saida + '\n Por conta dos 10 ciclos desde a ultima alteração do M: ';
                 Saida = Saida + '\n P ' + this.tabelaProcessos[j].getId() + ' foi para M0, R' + this.tabelaProcessos[j].getR() + ' M' + this.tabelaProcessos[j].getM();
-            } else if (this.tabelaProcessos[j].getM() == 1) {
+            } else {
                 this.tabelaProcessos[j].aumentaContador();
             }
         }
@@ -218,8 +216,9 @@ class MRU {
 
         for(let j = 0; j < this.tabelaProcessos.length; j++){
 
-            let probabilidadeModificado = Math.random() * 100;  
-            if (probabilidadeModificado < 20) {
+            let probabilidadeModificado = Math.random() * 100; 
+
+            if (probabilidadeModificado < 5) {
                 this.tabelaProcessos[j].setR(1);
                 this.tabelaProcessos[j].setM(1);
                 this.tabelaProcessos[j].setContador(0);
@@ -228,7 +227,7 @@ class MRU {
 
                 let probabilidadeReferenciado = Math.random() * 100;  
 
-                if (probabilidadeReferenciado < 20){
+                if (probabilidadeReferenciado < 5){
                     this.tabelaProcessos[j].setR(1);
                     Saida = Saida + '\n P ' + this.tabelaProcessos[j].getId() + ' foi referenciado R' + this.tabelaProcessos[j].getR() + ' M' + this.tabelaProcessos[j].getM();
                 }

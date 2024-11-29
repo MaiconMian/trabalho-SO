@@ -21,20 +21,32 @@
     <h1>Substituição de Página</h1>
     <p class="texto" > Por: Maicon Almeida Mian (RA:2023.1.08.013) | Sistemas Operacionais [DCE131] | Professor: Fellipe Rey</p>
     
-    <input type="number" id="tamanhoMemoria" class="entry">
-    <button onclick="iniciaMemoria()" id="botaoIniciaMemoria" class="botaoSimples"> INICIA MEMORIA </button>
-
-
-    <input type="number" id="tamanhoProcesso" class="entry">
-    <input type="number" id="horaEntrar" class="entry">
-
-    <button onclick="criaProcesso()" id="botaoCriaProcesso" class="botaoSimples"> CRIAR </button>
-
-    <p>Criar processos aleatoriamente?</p> 
-    <input type="checkbox" id="criarProcessoAleatorio" class="Checkbox"> 
+    <div style="margin-top: 20px;">
+        <label for="tamanhoMemoria">Tamanho da Memória:</label>
+        <input type="number" id="tamanhoMemoria" class="entry" placeholder="Digite o tamanho">
+        <button onclick="iniciaMemoria()" id="botaoIniciaMemoria" class="botaoSimples">INICIA MEMÓRIA</button>
+    </div>
     
-    <button onclick="inicia()" id="botaoInicia" class="botaoSimples"> INICIAR </button>
-    <button onclick="parar()" id="botaoPara" class="botaoPara disabled" disabled> PARAR </button>
+
+    <div style="margin-top: 20px;">
+        <label for="tamanhoMemoria">Criação de Processo:</label>
+        <input type="number" id="tamanhoProcesso" class="entry" placeholder="Tamanho do Processo">
+        <input type="number" id="horaEntrar" class="entry" placeholder="Hora de Entrada">
+        <button onclick="criaProcesso()" id="botaoCriaProcesso" class="botaoSimples">CRIAR</button>
+    </div>
+    
+
+    <div style="margin: 10px 0; font-family: Arial, sans-serif;">
+        <label for="criarProcessoAleatorio" style="cursor: pointer;">
+            Criar processos aleatoriamente?
+            <input type="checkbox" id="criarProcessoAleatorio" class="Checkbox" style="margin-right: 5px;">
+        </label>
+    </div>    
+
+    <div>
+        <button onclick="inicia()" id="botaoInicia" class="botaoSimples"> INICIAR </button>
+        <button onclick="parar()" id="botaoPara" class="botaoPara disabled" disabled> PARAR </button>
+    </div>
 
     <h1>Lista de processos que entrarão</h1>
     <div class="scroll-container" id="processosPendentes"></div>
