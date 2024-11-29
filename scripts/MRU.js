@@ -79,8 +79,6 @@ class MRU {
         var casaInicial = 0;
         var tamanhovazio = 0;
     
-        console.log("Tentando alocar o processo:", processo);
-    
         for (let i = 0; i < this.tamanho; i++) {
             
             if (this.memoria[i] == -1) {
@@ -88,16 +86,11 @@ class MRU {
                 casaInicial = i;
                 tamanhovazio = 0;
     
-                console.log(`Espaço vazio encontrado na posição ${casaInicial}`);
-    
                 for (let j = i; j < this.tamanho && this.memoria[j] == -1; j++) {
                     tamanhovazio++;
                 }
     
-                console.log(`Tamanho do espaço vazio encontrado: ${tamanhovazio}`);
-    
                 if (tamanhovazio >= processo.getTamanho()) {
-                    console.log(`Espaço suficiente encontrado na posição ${casaInicial}, alocando processo...`);
                     let tamProc = processo.getTamanho();
     
                     for (let k = casaInicial; k < this.tamanho && tamProc != 0; k++) {
@@ -105,29 +98,19 @@ class MRU {
                         tamProc--;
                     }
                     processo.setEnderecoInicio(casaInicial);
-    
-                    console.log("Processo alocado com sucesso!");
-                    console.log("Estado atual da memória:", this.memoria);
-    
                     return processo;
                 } else {
-                    console.log("Espaço insuficiente, continuando busca...");
                     i = casaInicial + tamanhovazio - 1;
                 }
             }
         }
-    
-        console.log("Não foi possível alocar o processo.");
         return null;
     }
     
     NUR(processo) {
-        console.log("Iniciando o algoritmo NUR para o processo:", processo);
     
-        // Busca menor classe
         let menorClasse = this.buscaMenorClasse();
         let processosMenorClasse = [];
-        console.log(`Menor classe identificada: ${menorClasse}`);
     
         // Seleciona todos os processos da menor classe
         for (let i = 0; i < this.tabelaProcessos.length; i++) {
@@ -135,8 +118,6 @@ class MRU {
                 processosMenorClasse.push(this.tabelaProcessos[i]);
             }
         }
-    
-        console.log("Processos da menor classe:", processosMenorClasse);
     
         // Sorteia um processo aleatoriamente dos menores
         let numeroSorteado = Math.floor(Math.random() * processosMenorClasse.length);
@@ -149,8 +130,7 @@ class MRU {
 
 
         Saida = Saida + ' P' + processoAleatorio.getId();
-    
-    
+
         this.retiraElemento(processoAleatorio.getId());
     
         // Verifica se o espaço foi suficiente

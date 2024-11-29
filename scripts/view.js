@@ -11,7 +11,7 @@ function atualizaListaProcessos() {
             var processoDiv = document.createElement('div');
 
             processoDiv.className = 'item';
-            processoDiv.innerHTML = `P:${processoAtual.getId()} ${processoAtual.getTamanho()}pg, ${processoAtual.getEntrada()}u.t`;
+            processoDiv.innerHTML = `P:${processoAtual.getId()} | ${processoAtual.getTamanho()}pg | ${processoAtual.getEntrada()}u.t`;
 
             processosPendentes.appendChild(processoDiv);
         }

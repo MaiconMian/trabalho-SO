@@ -24,8 +24,6 @@ function iniciaMemoria(){
     } catch(e){
        alert(e.message);
     }
-
-
 }
 
 function criaProcesso(){
