@@ -14,17 +14,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Substituição de página</title>
+    <link rel = "stylesheet" type="text/css" href="style/style.css">
 </head>
 <body> 
 
-    <p class="titulo"> Substituição de página </p>
+    <h1>Substituição de Página</h1>
     <p class="texto" > Por: Maicon Almeida Mian (RA:2023.1.08.013) | Sistemas Operacionais [DCE131] | Professor: Fellipe Rey</p>
+    
+    <input type="number" id="tamanhoMemoria" class="entry">
+    <button onclick="iniciaMemoria()" id="botaoIniciaMemoria" class="botaoSimples"> INICIA MEMORIA </button>
+
+
     <input type="number" id="tamanhoProcesso" class="entry">
     <input type="number" id="horaEntrar" class="entry">
+
     <button onclick="criaProcesso()" id="botaoCriaProcesso" class="botaoSimples"> CRIAR </button>
-    <button onclick="processar()" id="botaoInicia" class="botaoSimples"> INICIAR </button>
+
+    <p>Criar processos aleatoriamente?</p> 
+    <input type="checkbox" id="criarProcessoAleatorio" class="Checkbox"> 
+    
+    <button onclick="inicia()" id="botaoInicia" class="botaoSimples"> INICIAR </button>
+    <button onclick="parar()" id="botaoPara" class="botaoPara disabled" disabled> PARAR </button>
+
+    <h1>Lista de processos que entrarão</h1>
+    <div class="scroll-container" id="processosPendentes"></div>
+
+    <h1>Linha do tempo de execução</h1>
+    <div id="LinhaDoTempo"></div>
 
     <script src="scripts/MRU.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/Processo.js"></script>
+    <script src="scripts/view.js"></script>
 </body>

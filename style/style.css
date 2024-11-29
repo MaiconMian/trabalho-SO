@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.scroll-container {
+    max-width: 100%; 
+    height: 70px; 
+    overflow-x: auto;
+    overflow-y: hidden; 
+    white-space: nowrap; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    box-sizing: border-box; 
+}
+
+.item {
+    display: inline-block; /* Para permitir elementos lado a lado */
+    background-color: #f0f0f0;
+    border: 1px solid #aaa;
+    padding: 10px;
+    margin-right: 10px;
+    min-width: 100px; /* Largura mínima de cada item */
+    text-align: center;
+}
+
+.botaoInicia.disabled, .botaoPara.disabled, .botaoLimpa.disabled, .botaoSimples.disabled{
+    background-color: gray; 
+    color: lightgray; 
+    cursor: not-allowed; 
+}
+
+#LinhaDoTempo {
+    font-family: Arial, sans-serif; /* Define a fonte Arial */
+    font-size: 16px; /* Ajuste o tamanho da fonte */
+    color: #333; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno da div */
+    background-color: #f9f9f9; /* Fundo leve para contraste */
+    border: 1px solid #ccc; /* Borda da div */
+    border-radius: 5px; /* Arredonda os cantos */
+    max-height: 300px; /* Altura máxima */
+    overflow-y: auto; /* Habilita scroll se exceder a altura */
+}
+
+.linha-saida {
+    margin-bottom: 8px; /* Espaçamento entre linhas */
+    padding: 5px; /* Espaçamento interno */
+    border-bottom: 1px solid #ddd; /* Linha divisória */
+}
